@@ -123,7 +123,7 @@ public class SxtArrayList /*implements List*/ {
 		list.add("333");
 		list.add("444");
 		list.add("5");
-		list.add("344433");
+ 		list.add("344433");
 		list.add("333");
 		list.add("333");
 		System.out.println(list.size()); 

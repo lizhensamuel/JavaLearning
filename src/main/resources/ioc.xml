@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--bean标签表示要创建的bean对象
+        id:bean的唯一标识符，为了跟其他bean区分
+        class:表示要创建的bean的完全限定名
+     -->
+    <!-- 使用属性值赋值的时候，参数的name属性是由set方法后参数首字母小写的名称决定的 -->
+    <bean id="person" class="javaframe.spring.bean.Person">
+        <!--使用property标签给属性赋值
+            name:表示属性的名称
+            value：具体的属性值
+        -->
+        <property name="id" value="1"></property>
+        <property name="name" value="samuel"></property>
+        <property name="age" value="20"></property>
+        <property name="gender" value="male"></property>
+        <property name="date" value="2021/06/10"></property>
+    </bean>
+   <!--使用构造器方法赋值的时候，参数的name属性是由构造方法的参数名称决定的-->
+   <!--
+       name:表示参数列表的名称
+       value:表示实际的具体值
+       type:表示值得类型
+       index:表示值的下标，从0开始
+
+   -->
+    <!--
+    <bean id="person2" class="javaframe.spring.bean.Person">
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="name" value="23333"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+        <constructor-arg name="gender" value="female"></constructor-arg>
+    </bean>
+    -->
+    <!--
+        使用构造器方法赋值的时候，参数name可以不写，但是要注意value值的顺序
+        如果value顺序与构造器参数列表不一致也可以通过index属性来确定顺序
+    -->
+    <!--
+    <bean id="person3" class="javaframe.spring.bean.Person">
+        <constructor-arg value="2" index="0"></constructor-arg>
+        <constructor-arg value="female" index="3"></constructor-arg>
+        <constructor-arg value="22" index="2"></constructor-arg>
+        <constructor-arg value="23333" index="1"></constructor-arg>
+    </bean>
+    -->
+    <!--
+        当有多个相同参数数量的构造方法时，默认情况下是后面的构造方法覆盖前面的构造方法
+        如果非要赋值给参数数量不同的构造方法，可以使用type的参数来进行类型的指定
+    -->
+    <!--
+    <bean id="person4" class="javaframe.spring.bean.Person">
+        <constructor-arg value="2" type="java.lang.Integer"></constructor-arg>
+        <constructor-arg value="22" type="java.lang.Integer"></constructor-arg>
+        <constructor-arg value="female" ></constructor-arg>
+    </bean>
+    -->
+    <!-- 在日常工作中，一般都是name,value的方式,很少有人使用index,type，但是要注意各种情况的出现 -->
+
+
+
+
+
+</beans>

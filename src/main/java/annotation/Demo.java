@@ -4,6 +4,7 @@ import java.lang.annotation.*;
 
 @MyAnnotation()
 public class Demo {
+
     //注解可以显式赋值，如果没有默认值，我们就必须给注解赋值
     //注解的参数没有顺序
     @MyAnnotation(name = "samuel",age = 3,id = 3)
@@ -12,7 +13,10 @@ public class Demo {
 
     }
 }
-//自定义注解
+
+/**
+ * @author Samuel
+ */ //自定义注解
 @Target(value = {ElementType.METHOD,ElementType.TYPE})//表示注解的使用范围
 @Retention(value = RetentionPolicy.RUNTIME)//表示注解的有效范围（runtime>class>source）
 @Documented//表示是否将注解生成在JavaDoc中
@@ -25,6 +29,9 @@ public class Demo {
 
 }
 
+/**
+ * @author Samuel
+ */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @interface  MyAnnotation2{
